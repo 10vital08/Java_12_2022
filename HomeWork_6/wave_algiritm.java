@@ -10,7 +10,7 @@ public class wave_algiritm {
         System.out.println(new MapPrinter().mapColor(mg.getMap()));
 
         var lee = new WaveAlgorithm(mg.getMap());
-        lee.Colorize(new Point2D(3, 3));
+        lee.Colorize(new Point2D(1, 1));
 
         System.out.println(new MapPrinter().rawData(mg.getMap()));
     }
@@ -104,16 +104,16 @@ class MapPrinter {
             for (int col = 0; col < map[row].length; col++) {
                 switch (map[row][col]) {
                     case 0:
-                        sb.append("в–‘");
+                        sb.append("0 ");
                         break;
                     case -1:
-                        sb.append("в–“");
+                        sb.append("* ");
                         break;
                     case -2:
-                        sb.append("Рљ");
+                        sb.append("Р ");
                         break;
                     case -3:
-                        sb.append("E");
+                        sb.append("E ");
                         break;
                     default:
                         break;
@@ -134,7 +134,7 @@ class WaveAlgorithm {
     public WaveAlgorithm(int[][] map) {
         this.map = map;
     }
-
+    
     public void Colorize(Point2D startPoint) {
         Queue<Point2D> queue = new LinkedList<Point2D>();
         queue.add(startPoint);
